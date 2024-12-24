@@ -12,7 +12,7 @@ export const storageUtils = {
 
   removeNoteById(id) {
     const notes = this.getNotes();
-    const index = notes.findIndex(e => e.id === id);
+    const index = notes.findIndex(e => e.uniqueId === id);
     notes.splice(index, 1);
     this.saveNotes(notes);
   },
