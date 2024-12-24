@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>note and title</title>
+</head>
+<body>
+  <div class="background"></div>
+  <ul class="note-list">
+    
+  </ul>
+  <script>
+    const textAreas = document.getElementsByClassName('auto-resize');
+    for (let textArea of textAreas) {
+      textArea.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+      });
+    }
+  </script>
+  <script type="module" src="index.js"></script>
+</body>
+</html>
