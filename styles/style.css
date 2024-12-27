@@ -60,8 +60,8 @@ body {
   text-align: center;
   line-height: 1.75;
   word-wrap: break-word;
-  white-space: nowrap;        /* Prevent text from wrapping */
-  overflow: hidden;          /* Hide overflowing content */
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
   flex-shrink: 0;
 }
@@ -71,11 +71,11 @@ body {
   word-wrap: break-word;
   padding: 10px;
   font-size: 20px;
-  overflow-y: auto; /* Вертикальна прокрутка */
-  overflow-x: hidden; /* Сховати горизонтальну прокрутку */
+  overflow-y: auto;
+  overflow-x: hidden; 
   scrollbar-color: rgb(224, 248, 169) #bad47c;
   background-color: rgb(207, 235, 142);
-  flex-grow: 1; /* Контент займатиме доступну висоту */
+  flex-grow: 1; 
   height: 200px;
 }
 
@@ -88,12 +88,6 @@ body {
   box-sizing: border-box;
   padding: 0 7px 0 7px;
 }
-
-/* .note-form > .content {
-  scrollbar-color: rgb(207, 235, 142);
-  height: calc(100% - 52.5px - 48px);
-  background-color: rgb(207, 235, 142);
-} */
 
 .note-button {
   margin: 3px;
@@ -117,10 +111,3 @@ body {
 .create-button:hover {
   background-color: #d5e40a;
 }
-
-/* .auto-resize {
-  width: 100%; 
-  overflow: hidden; 
-  resize: none; 
-  box-sizing: border-box; 
-} */

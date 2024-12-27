@@ -2,7 +2,7 @@ export function createNoteElement(title, content, callback = () => {}) {
   const element = document.createElement('li');
   element.className = 'note';
   element.innerHTML =
-    `<div class="title">${title}</div>` +
+    `<div class="title" title="${title}">${title}</div>` +
     `<div class="content">${content}</div>` +
     `<div class="note-button remove-button">remove</div>`;
 
