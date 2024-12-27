@@ -1,18 +1,18 @@
 import { createNoteElement, createNoteFormElement } from './components.js';
-import { generateUniqueId } from './utils.js';
-import { storageUtils } from './storage.js';
+import { generateUniqueId } from './utils/uid.js';
+import { storageUtils } from './utils/storage.js';
 
 const noteList = document.querySelector('.note-list');
 const noteForm = createNoteFormElement(() => {
-  const fields = noteForm.fields
   const note = { 
-    title: fields.title,
-    content: fields.content,
+    title: noteForm.querySelector('.title').value.trim(),
+    content: noteForm.querySelector('.content').value.trim(),
     uniqueId: generateUniqueId(), 
   };
+  if (note.title === '' || note.content === '') return;
 
   storageUtils.addNotes(note);
-  const noteElement = createNoteElement(fields.title, fields.content, () => {
+  const noteElement = createNoteElement(note.title, note.content, () => {
     storageUtils.removeNoteById(note.uniqueId);
   });
   
@@ -21,11 +21,9 @@ const noteForm = createNoteFormElement(() => {
 
 noteList.appendChild(noteForm);
 
-if (storageUtils.getNotes() === null)
-  storageUtils.saveNotes([]);
+storageUtils.initStorage();
 
 storageUtils.getNotes().forEach(note => {
-  console.log(note);
   const noteElement = createNoteElement(note.title, note.content, () => {
     storageUtils.removeNoteById(note.uniqueId);
   });
